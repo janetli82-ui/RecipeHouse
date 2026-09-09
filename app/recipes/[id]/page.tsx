@@ -27,12 +27,12 @@ const RecipePage = async ({ params }: { params: Promise<{ id: string }> }) => {
   return (
     <div className="flex flex-col justify-center items-center h-full p-3 relative">
       {recipe! && 
-        <Link href={`/categories/${recipe.strCategory}`} className="absolute md:left-2 md:top-5 left-5 -top-12 ">
+        <Link href={`/categories/${recipe.strCategory}`} className="absolute md:left-2 md:top-5 left-5 -top-8 ">
           <BackButton />
         </Link>
       }
       {recipe! && (
-        <div className="w-full max-w-4xl bg-white rounded-2xl shadow-lg p-6"> 
+        <div className="w-full max-w-4xl bg-white rounded-2xl shadow-lg p-6 mt-2"> 
           <h2 className="text-2xl">Ingredient:</h2>
           <div className="flex flex-wrap gap-2 mt-3">
       

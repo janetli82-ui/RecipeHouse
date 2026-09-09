@@ -25,7 +25,7 @@ const RecipeList = ({recipes}: {recipes: RecipesType[]}) => {
   const [freshRecipePage, setFreshRecipePage] = useState(newRecipes)
   return(
     <div>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:-mt-4 -mt-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 p-6 max-w-7xl mx-auto">
         {freshRecipePage.map((recipe, index) => (
           <RecipeCard {...recipe} key={index}/>
         ))}
