@@ -6,9 +6,10 @@ import Navigation from "../Navigation"
 import { UserContextType } from "@/types/types"
 import LogIn from "."
 import { ReactNode } from "react"
+import Public from "./public"
 
 const Wrapper = ({children}:{children:ReactNode}) => {
-  const {user} = userUseContext() as UserContextType
+  const { user } = userUseContext() as UserContextType
   return(
     <div className="grow">
       {user ? 
@@ -19,7 +20,8 @@ const Wrapper = ({children}:{children:ReactNode}) => {
           </div>
         </>
         : <div className="p-20">
-            <LogIn/>
+            <LogIn />
+            <Public />
           </div>
       }
      

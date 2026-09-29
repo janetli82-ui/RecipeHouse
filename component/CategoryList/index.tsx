@@ -4,9 +4,10 @@ import { CategoryType } from "@/types/types";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-const CategoryList = ({ favorite }: { favorite: string }) => {
+const CategoryList = ({ favorite, updateFavorite }: {favorite: string;
+  updateFavorite: (category: string) => void}) => {
   const [category, setCategory] = useState<CategoryType[]>([]);
- 
+  
     const fetchCategories = async () => {
       try {
         const res = await fetch(
@@ -44,7 +45,7 @@ const CategoryList = ({ favorite }: { favorite: string }) => {
             <div className="p-5">
               <h3 className="text-xl font-bold text-gray-800 mb-2 group-hover:text-orange-500 transition-colors">
                 {item.strCategory}{" "}
-                <button className="cursor-pointer">{item.strCategory === favorite ? "❤️" : "🤍"}</button>
+                <button className="cursor-pointer" onClick={() => updateFavorite(item.strCategory)}>{item.strCategory === favorite ? "❤️" : "🤍"}</button>
               </h3>
               <p className="text-gray-500 text-sm leading-relaxed line-clamp-3">
                 {item.strCategoryDescription}

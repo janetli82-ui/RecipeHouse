@@ -19,10 +19,11 @@ export default function Home (){
       console.log(error);
     }
   }
+
   
   useEffect(()=> {
    fetchFavorite()
-  }, [])
+  }, [user?.favoriteCategory])
 
 
   return (

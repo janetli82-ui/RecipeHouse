@@ -6,11 +6,14 @@ import { UserContextType } from "@/types/types";
 
 
 const Categories = () => {
-  const {user} = userUseContext() as UserContextType
+  const {user, setUser} = userUseContext() as UserContextType
+  const updateFavorite = (category: string) => {
+    setUser({ ...user!, favoriteCategory: category });
+  };
 
   return (
     <>
-      <CategoryList favorite={user!.favoriteCategory} />
+      <CategoryList favorite={user!.favoriteCategory} updateFavorite={updateFavorite}/>
     </>
   );
 };
